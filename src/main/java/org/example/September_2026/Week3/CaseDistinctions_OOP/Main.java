@@ -73,8 +73,6 @@ public class Main {
                 System.out.println(gorilla2.toString());
                 System.out.println(gorilla.equals(gorilla2));
                 System.out.println(gorilla==gorilla2);
-
-
         }
         scanner.close();
     }
