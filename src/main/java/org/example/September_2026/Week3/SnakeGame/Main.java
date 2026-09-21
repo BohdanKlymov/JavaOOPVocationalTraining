@@ -1,6 +1,7 @@
 package org.example.September_2026.Week3.SnakeGame;
 
 import java.awt.Point;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -17,36 +18,42 @@ public class Main {
         Gameplay gameplay = new Gameplay();
 
         Scanner scanner = new Scanner(System.in);
+        boolean playerIsAlive = true;
 
-        while ( true ) {
+        while ( playerIsAlive ) {
 
             gameplay.printTheField();
 
             // Status feststellen
 
-            gameplay.checkStatus();
+            playerIsAlive = gameplay.checkStatus();
 
-            String move = scanner.nextLine();
+            if (playerIsAlive) {
+                String move = scanner.nextLine();
 
-            switch (move) {
+                switch (move) {
 
-                // Spielfeld ist im Bereich 0/0 .. 29/29
+                    // Spielfeld ist im Bereich 0/0 .. 29/29
 
-                case "w" : gameplay.moveUp(); break;
+                    case "w" : gameplay.moveUp(); break;
 
-                case "s" : gameplay.moveDown(); break;
+                    case "s" : gameplay.moveDown(); break;
 
-                case "a" : gameplay.moveLeft(); break;
+                    case "a" : gameplay.moveLeft(); break;
 
-                case "d" : gameplay.moveRight(); break;
+                    case "d" : gameplay.moveRight(); break;
 
+                }
+
+                // Schlange bewegt sich in Richtung Spieler
+
+                gameplay.snakeMovesToPlayer();
             }
 
-            // Schlange bewegt sich in Richtung Spieler
 
-            gameplay.snakeMovesToPlayer();
         }
 
+        scanner.close();
     }
 
 }

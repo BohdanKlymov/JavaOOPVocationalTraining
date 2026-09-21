@@ -5,7 +5,7 @@ public class Main {
 
 Lernziele:
 1. Objekt-Methoden und Klassenmethoden in Programmen korrekt anwenden lernen
-2. Beziehung zwischen Objekt-Methoden und Klassenmethoden kennen lernen
+2. Beziehung zwischen Objekt-Methoden und Klassenmethoden kennenlernen
 
 Ergänzen Sie folgendes Programm um eine Klasse Bruchzahl.
 

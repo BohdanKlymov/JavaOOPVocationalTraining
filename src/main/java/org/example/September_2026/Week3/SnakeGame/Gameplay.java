@@ -1,31 +1,37 @@
 package org.example.September_2026.Week3.SnakeGame;
 import java.awt.Point;
+import java.util.Random;
 
 public class Gameplay {
 
-    private Point playerPosition;
-    private Point snakePosition;
-    private Point goldPosition;
-    private Point doorPosition;
+    private PointForPosition playerPosition;
+    private PointForPosition snakePosition;
+    private PointForPosition goldPosition;
+    private PointForPosition doorPosition;
     private boolean rich;
 
+    public int fieldManPointForObject = 29;
+
     public Gameplay() {
-        playerPosition = new Point( 10, 9 );
 
-        snakePosition  = new Point( 28, 1 );
+        Random random = new Random();
 
-        goldPosition   = new Point( 6, 6 );
+        playerPosition = new PointForPosition( random.nextInt(fieldManPointForObject - 1) + 1, random.nextInt(fieldManPointForObject - 1) + 1 );
 
-        doorPosition   = new Point( 7, 11 );
+        snakePosition  = new PointForPosition( random.nextInt(fieldManPointForObject - 1) + 1, random.nextInt(fieldManPointForObject - 1) + 1 );
+
+        goldPosition   = new PointForPosition( random.nextInt(fieldManPointForObject - 1) + 1, random.nextInt(fieldManPointForObject - 1) + 1 );
+
+        doorPosition   = new PointForPosition( random.nextInt(fieldManPointForObject - 1) + 1, random.nextInt(fieldManPointForObject - 1) + 1 );
 
         rich = false;
     }
 
         // Raster mit Figuren zeichnen
     void printTheField() {
-        for ( int y = 0; y < 30; y++ ) {
+        for ( int y = 0; y < fieldManPointForObject + 1; y++ ) {
 
-            for ( int x = 0; x < 30; x++ ) {
+            for ( int x = 0; x < fieldManPointForObject + 1; x++ ) {
 
                 Point p = new Point( x, y );
 
@@ -54,24 +60,15 @@ public class Gameplay {
         }
     }
 
-     void checkStatus() {
-        if ( rich && playerPosition.equals( doorPosition ) ) {
+     boolean checkStatus() {
 
-            System.out.println( "You wooon!" );
+        if (playerPosition.equals(doorPosition) && !rich) {
+            System.out.println("You ran away, but you're stil poor!");
 
-            return;
-
+            return false;
         }
 
-                if ( playerPosition.equals( snakePosition ) ) {
-
-            System.out.println( "ZZZZZZZ. Snake has caught you!" );
-
-            return;
-
-        }
-
-                if ( playerPosition.equals( goldPosition ) ) {
+        if ( playerPosition.equals( goldPosition ) ) {
 
             rich = true;
 
@@ -79,6 +76,23 @@ public class Gameplay {
 
         }
 
+        if ( rich && playerPosition.equals( doorPosition ) ) {
+
+            System.out.println( "You wooon!" );
+
+            return false;
+
+        }
+
+        if ( playerPosition.equals( snakePosition ) ) {
+
+            System.out.println( "ZZZZZZZ. Snake has caught you!" );
+
+            return false;
+
+        }
+
+        return true;
     }
 
     public void moveUp(){
@@ -86,7 +100,7 @@ public class Gameplay {
     }
 
     public void moveDown(){
-        playerPosition.y = Math.min(  29, playerPosition.y + 1 );
+        playerPosition.y = Math.min(  fieldManPointForObject, playerPosition.y + 1 );
     }
 
     public void moveLeft(){
@@ -94,7 +108,7 @@ public class Gameplay {
     }
 
     public void moveRight(){
-        playerPosition.x = Math.min( 29, playerPosition.x + 1 );
+        playerPosition.x = Math.min( fieldManPointForObject, playerPosition.x + 1 );
     }
 
     public void snakeMovesToPlayer() {
