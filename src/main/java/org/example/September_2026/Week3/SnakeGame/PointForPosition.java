@@ -14,6 +14,10 @@ public class PointForPosition {
         return xPosition;
     }
 
+    public void setX(int xPosition) {
+        this.xPosition = xPosition;
+    }
+
     public double getY() {
         return yPosition;
     }
