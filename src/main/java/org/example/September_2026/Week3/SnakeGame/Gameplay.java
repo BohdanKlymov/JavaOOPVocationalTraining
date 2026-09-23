@@ -33,12 +33,11 @@ public class Gameplay {
 
             for ( int x = 0; x < fieldManPointForObject + 1; x++ ) {
 
-                Point p = new Point( x, y );
+                PointForPosition p = new PointForPosition( x, y );
 
-                if ( playerPosition.equals( p ) )
-
+                if ( playerPosition.equals( p ) ) {
                     System.out.print( "\uD83D\uDE00" );
-
+                }
                 else if ( snakePosition.equals( p ) )
 
                     System.out.print( "\uD83D\uDC0D" );
@@ -96,36 +95,36 @@ public class Gameplay {
     }
 
     public void moveUp(){
-        playerPosition.y = Math.max(  0, playerPosition.y - 1 );
+        playerPosition.yPosition = Math.max(  0, playerPosition.yPosition - 1 );
     }
 
     public void moveDown(){
-        playerPosition.y = Math.min(  fieldManPointForObject, playerPosition.y + 1 );
+        playerPosition.yPosition = Math.min(  fieldManPointForObject, playerPosition.yPosition + 1 );
     }
 
     public void moveLeft(){
-        playerPosition.x = Math.max(  0, playerPosition.x - 1 );
+        playerPosition.xPosition = Math.max(  0, playerPosition.xPosition - 1 );
     }
 
     public void moveRight(){
-        playerPosition.x = Math.min( fieldManPointForObject, playerPosition.x + 1 );
+        playerPosition.xPosition = Math.min( fieldManPointForObject, playerPosition.xPosition + 1 );
     }
 
     public void snakeMovesToPlayer() {
-        if ( playerPosition.x < snakePosition.x )
+        if ( playerPosition.xPosition < snakePosition.xPosition )
 
-            snakePosition.x--;
+            snakePosition.xPosition--;
 
-        else if ( playerPosition.x > snakePosition.x )
+        else if ( playerPosition.xPosition > snakePosition.xPosition )
 
-            snakePosition.x++;
+            snakePosition.xPosition++;
 
-        if ( playerPosition.y < snakePosition.y )
+        if ( playerPosition.yPosition < snakePosition.yPosition )
 
-            snakePosition.y--;
+            snakePosition.yPosition--;
 
-        else if ( playerPosition.y > snakePosition.y )
+        else if ( playerPosition.yPosition > snakePosition.yPosition )
 
-            snakePosition.y++;
+            snakePosition.yPosition++;
     }
 }

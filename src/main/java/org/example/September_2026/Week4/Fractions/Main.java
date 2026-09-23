@@ -20,6 +20,7 @@ Ergänzen Sie folgendes Programm um eine Klasse Bruchzahl.
       Ergänzen Sie Unit Tests um Aufrufe zum Test des Konstruktors und
       der Methode 'toString'.
 
+
 12.2. Ergänzen Sie in Ihrer Klasse Bruchzahl Objekt-Methoden
       (NICHT-static Methoden) mit je einem(!) Parameter,  um folgende Operationen
       (nach den üblichen Rechenregeln für Brüche) ausführen zu können:
