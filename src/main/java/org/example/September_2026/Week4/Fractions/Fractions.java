@@ -28,26 +28,52 @@ public class Fractions {
         );
     }
 
-    public Fractions divideBy(Fractions other) {
-        return new Fractions(
-                this.counter * other.denominator,
-                this.denominator * other.counter
-        );
+    public void divideBy(Fractions other) {
+
+        this.counter *= other.denominator;
+        this.denominator *= other.counter;
+
     }
 
-    public Fractions addiereDazu(Fractions other) {
-        return new Fractions(
-                this.counter * other.denominator
-                        + other.counter * this.denominator,
-                this.denominator * other.denominator
-        );
+    public Fractions addThis(Fractions other) {
+
+        long thisCounterCopyForMultiplication = this.counter;
+        long otherCounterCopyForMultiplication = other.counter;
+
+        long thisDenominatorCopyForMultiplication = this.denominator;
+        long otherDenominatorCopyForMultiplication = other.denominator;
+
+        long otherDenominator = other.denominator;
+        long otherCounter = other.counter;
+
+        boolean running = true;
+
+        while(running) {
+            if (this.denominator == otherDenominator) {
+                running = false;
+                return new Fractions(this.counter += otherCounter, this.denominator);
+            } else {
+                if (this.denominator < otherDenominator) {
+                    this.denominator += thisDenominatorCopyForMultiplication;
+                    this.counter += thisCounterCopyForMultiplication;
+                } else {
+                    otherDenominator += otherDenominatorCopyForMultiplication;
+                    otherCounter += otherCounterCopyForMultiplication;
+                }
+            }
+        }
+        return null;
     }
 
-    public Fractions subtractFromThat(Fractions other) {
+    public void subtractFromThat(Fractions other) {
+        this.counter =- other.counter;
+        this.denominator =- other.denominator;
+    }
+
+    public static Fractions addTwoFractions(Fractions firstFraction, Fractions secondFraction) {
         return new Fractions(
-                this.counter * other.denominator
-                        - other.counter * this.denominator,
-                this.denominator * other.denominator
+            firstFraction.counter + secondFraction.counter,
+            firstFraction.denominator + secondFraction.denominator
         );
     }
 }
