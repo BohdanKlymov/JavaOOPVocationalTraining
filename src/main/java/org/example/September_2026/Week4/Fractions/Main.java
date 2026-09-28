@@ -41,7 +41,7 @@ Ergänzen Sie folgendes Programm um eine Klasse Bruchzahl.
 
      Erweitern Sie Ihre Unit-Test um entsprechende Testaufrufe.
 
-Hinweis: statische Methoden werden im Klassendiagram unterstrichen.
+Hinweis: statische Methoden werden im Klassendiagram unterstrichen. !!!
 
 12.4. Vergleichen Sie Aufruf und Implementierung von 'addiere' aus 12.3
       mit Aufruf und Implementierung von 'addiereDazu' aus 12.2
