@@ -1,7 +1,7 @@
-package org.example.September_2026;
+package org.example.September;
 
 import org.junit.jupiter.api.Test;
-import org.example.September_2026.Week4.Fractions.Fractions;
+import org.example.September.Week4.Fractions.Fractions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

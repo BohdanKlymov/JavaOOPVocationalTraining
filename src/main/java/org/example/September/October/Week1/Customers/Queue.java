@@ -1,6 +1,6 @@
-package org.example.September_2026.October.Week1.Customers;
+package org.example.September.October.Week1.Customers;
 
-public class Snake<T> {
+public class Queue<T> {
     private Element<T> beginn;
     private Element<T> end;
 

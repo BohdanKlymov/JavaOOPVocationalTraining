@@ -1,7 +1,5 @@
-package org.example.September_2026.Week3.SnakeGame;
+package org.example.September.Week3.SnakeGame;
 
-import java.awt.Point;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {

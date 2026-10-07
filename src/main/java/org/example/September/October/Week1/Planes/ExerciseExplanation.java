@@ -1,4 +1,4 @@
-package org.example.September_2026.October.Week1.Planes;
+package org.example.September.October.Week1.Planes;
 
 public class ExerciseExplanation {
 //    Aufgabe 7 (Flugzeuge)

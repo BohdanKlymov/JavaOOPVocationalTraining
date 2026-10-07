@@ -1,4 +1,4 @@
-package org.example.September_2026.Week3;
+package org.example.September.Week3;
 import java.util.Scanner;
 
 public class CaseDistinctions_imperative {

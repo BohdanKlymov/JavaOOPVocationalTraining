@@ -1,4 +1,4 @@
-package org.example.September_2026.Week3.CaseDistinctions_OOP;
+package org.example.September.Week3.CaseDistinctions_OOP;
 
 import java.util.Objects;
 

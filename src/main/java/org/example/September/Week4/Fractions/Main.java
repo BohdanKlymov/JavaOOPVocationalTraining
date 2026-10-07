@@ -1,4 +1,4 @@
-package org.example.September_2026.Week4.Fractions;
+package org.example.September.Week4.Fractions;
 
 public class Main {
     /* Aufgabe 12 Bruchzahlen

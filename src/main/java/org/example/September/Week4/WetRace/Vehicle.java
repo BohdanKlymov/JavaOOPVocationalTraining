@@ -1,4 +1,4 @@
-package org.example.September_2026.Week4.WetRace;
+package org.example.September.Week4.WetRace;
 
 public abstract class Vehicle {
     protected double position;

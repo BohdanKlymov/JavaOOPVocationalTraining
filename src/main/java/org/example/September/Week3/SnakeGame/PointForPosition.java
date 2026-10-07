@@ -1,6 +1,4 @@
-package org.example.September_2026.Week3.SnakeGame;
-
-import java.awt.*;
+package org.example.September.Week3.SnakeGame;
 
 public class PointForPosition {
 
