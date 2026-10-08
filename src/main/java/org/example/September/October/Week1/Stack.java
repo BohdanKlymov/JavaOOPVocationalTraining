@@ -1,18 +1,18 @@
 package org.example.September.October.Week1;
 
-public class Stack {
-    private Element<Integer> top;
+public class Stack <T> {
+    private Element<T> top;
 
 
-    public Integer peek() {
+    public T peek() {
         if (top == null) {
             return null;
         }
         return top.contents;
     }
 
-    public boolean push (Integer element) {
-        Element<Integer> newElement = new Element<>(element);
+    public boolean push (T element) {
+        Element<T> newElement = new Element<>(element);
 
         if (top != null) {
             newElement.next = top;
@@ -23,22 +23,22 @@ public class Stack {
         return true;
     }
 
-    public Integer pop() {
+    public T pop() {
         if (top == null) {
             return null;
         }
 
-        Integer value = top.contents;
+        T value = top.contents;
         top = top.next;
 
         return value;
     }
 
-    private static class Element<Integer> {
-        Integer contents;
-        Element<Integer> next;
+    private static class Element<T> {
+        T contents;
+        Element<T> next;
 
-        Element(Integer contents) {
+        Element(T contents) {
             this.contents = contents;
             this.next = null;
         }
